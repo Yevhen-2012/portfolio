@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 554.4 110" role="img" aria-labelledby="title desc">
+  <title id="title">GSAP custom horizontal logo</title>
+  <desc id="desc">A dark gray animation-curve symbol followed by the original GSAP vector wordmark.</desc>
+
+  <rect width="554.4" height="110" fill="#FFFFFF"/>
+
+  <g fill="#252F38">
+    <!-- Original symbol: a forward-leaning animation frame. -->
+    <path d="M20 2h73c9 0 14 7 12 16L93 92c-2 10-8 16-18 16H13C4 108-1 101 1 92l12-74C15 8 21 2 20 2Z"/>
+
+    <!-- Negative-space easing curve and keyframes. -->
+    <path fill="#FFFFFF" d="M24 79a6 6 0 1 1 0-12c12 0 17-8 24-20 8-14 17-28 36-28a6 6 0 1 1 0 12c-12 0-17 8-25 22-8 13-17 26-35 26Z"/>
+    <circle cx="51" cy="50" r="6" fill="#FFFFFF"/>
+
+    <!-- Exact outlined wordmark from the supplied SVG, shifted right without changing its geometry. -->
+    <g transform="translate(140 0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M45.5,110c28.8,0,50.7-17.2,55.2-44.9l2.7-16.3H55L51.5,70h19.2c-2.2,8.1-10.4,14.2-22.8,14.2c-12.2,0-18.2-6.4-18.2-19c0-17.9,8.9-39.6,30.3-39.6c9.5,0,13.7,4.8,13.9,12.7h30.3c2-24-18.6-38.5-44.1-38.5C24,0,0,29.6,0,65.6C0,93,17.1,110,45.5,110z M149.1,110c28.2,0,45.9-11.8,49.4-33.2c2.9-17.9-6.3-28.2-30.1-32.7l-8.4-1.6c-10.7-2-14.3-4.9-13.4-9.9c0.8-5.4,7.4-9.2,15.7-9.2c9.2,0,14,4.3,13.5,12h27.3c3-22.3-12.2-35.5-39-35.5c-25.2,0-44.2,12.9-47.4,32.2c-2.8,16.7,7.2,28.5,27.1,32.4l10.3,2c11.6,2.2,15.8,5.4,14.9,10.6c-0.9,5.6-7.9,9.4-17.2,9.4c-10.8,0-16.7-5.1-15.7-13.7H108C104.2,96.2,118.8,110,149.1,110z M197.9,108.3h33.5l8.1-17.5h35.6l2.2,17.5h32.5L291.4,1.7h-40.1L197.9,108.3z M250.2,67.9l0.4-0.9c6-12.9,11.7-25.3,17.2-38.3c1.3,12.9,2.8,25.4,4.4,38.3l0.1,0.9H250.2z M315.6,108.3h29.8l5.3-32.2h15.5c25.5,0,43.8-14.4,47.6-37.2c3.7-22.8-9.9-37.2-35.3-37.2h-45.3L315.6,108.3z M354.7,51.6l4.2-25.5h13.3c8.9,0,13.8,4.9,12.5,12.7c-1.4,7.8-7.8,12.7-16.7,12.7H354.7z"/>
+    </g>
+  </g>
+</svg>
