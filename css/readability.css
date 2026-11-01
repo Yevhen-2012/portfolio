@@ -1,0 +1,39 @@
+/* Reading roles are independent of the compact navigation/label scale. */
+:root {
+  --reading-size: 1rem;
+  --reading-leading: 1.55;
+  --reading-measure: 70ch;
+}
+
+p,
+p[class] {
+  font-size: var(--reading-size);
+  line-height: var(--reading-leading);
+  max-width: var(--reading-measure);
+  text-wrap: pretty;
+}
+
+/* Keep the hero's light accent; every letter keeps its full contrast. */
+.home-hero_title .text-shadow {
+  background-image: none;
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: currentColor;
+  color: inherit;
+}
+
+/* Navigation and its contact action never wait for entrance choreography.
+   Child hover animations and the mobile menu state remain independent. */
+.nav_logo,
+.nav_menu_text,
+.nav_cta {
+  transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@media screen and (max-width: 767px) {
+  :root {
+    --reading-leading: 1.6;
+  }
+}
