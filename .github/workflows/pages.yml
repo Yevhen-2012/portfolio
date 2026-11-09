@@ -23,7 +23,8 @@ jobs:
         run: |
           mkdir _site
           cp *.html robots.txt sitemap.xml .nojekyll _site/
-          cp -R css js images fonts projects _site/
+          cp -R css js images fonts projects assets _site/
+          cp styles.css app.js favicon.svg _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
