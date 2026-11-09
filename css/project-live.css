@@ -42,6 +42,15 @@
 
 .project-build-summary ol { margin-top: 0; margin-bottom: 0; }
 
+.project-build-summary--prose > p {
+  grid-column: 1 / -1;
+  max-width: none;
+  column-count: 2;
+  column-gap: clamp(2rem, 5vw, 5rem);
+}
+
+.project-live-links { display: flex; flex-wrap: wrap; gap: .75rem; }
+
 @media screen and (min-width: 768px) {
   /* Let the copy define the row height; the preview fills that height. */
   .project-details_content > .project-details_visual {
@@ -99,6 +108,7 @@
   .project-hero-gallery .project-hero-slider { flex: none; height: auto; }
   .project-gallery-track { height: clamp(14rem, 65vw, 22rem); }
   .project-info_component.project-build-summary { grid-template-columns: minmax(0, 1fr); row-gap: 1.5rem; }
+  .project-build-summary--prose > p { column-count: 1; }
 }
 
 .project-live-intro > p { margin-bottom: 0; }
