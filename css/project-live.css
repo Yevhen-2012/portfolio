@@ -1,4 +1,6 @@
 :root {
+  --project-section-gap: 2.5rem;
+  --project-tools-space: 4rem;
   --live-font-size: 1rem;
   --live-leading: 1.5rem;
   --live-height: 3rem;
@@ -6,6 +8,97 @@
   --live-gap: .75rem;
   --live-space-before: 1.5rem;
   --live-space-after: 2rem;
+}
+
+/* Match the space after the title and before the gallery label. */
+.section_project-details { overflow-x: clip; }
+
+.section_project-details .project-details_component {
+  gap: var(--project-section-gap);
+  padding-bottom: 0;
+}
+
+.section_project-galerry .project-galerry_component {
+  padding-top: var(--project-section-gap);
+}
+
+.project-details_description { padding-bottom: var(--project-tools-space); }
+
+.project-info_component.project-build-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(2rem, 5vw, 5rem);
+  row-gap: 1rem;
+  width: 100%;
+  max-width: none;
+  align-items: start;
+}
+
+.project-build-summary > h2 { grid-column: 1 / -1; margin: 0; }
+
+.project-build-summary > p { margin: 0; }
+
+.project-build-summary > .margin-top { margin-top: 0 !important; }
+
+.project-build-summary ol { margin-top: 0; margin-bottom: 0; }
+
+@media screen and (min-width: 768px) {
+  /* Let the copy define the row height; the preview fills that height. */
+  .project-details_content > .project-details_visual {
+    position: relative;
+    align-self: stretch;
+    min-width: 0;
+  }
+
+  .project-hero-gallery-inner {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.project-hero-gallery-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+  min-height: 0;
+}
+
+.project-hero-gallery .project-hero-slider {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: .75rem;
+  margin: 0;
+}
+
+.project-gallery-track { position: relative; display: flex; align-items: center; gap: 1rem; width: var(--gallery-edge-width, 100%); min-width: 0; min-height: 0; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+
+.project-gallery-track::-webkit-scrollbar { display: none; }
+
+.project-gallery-slide { flex: 0 0 auto; height: 100%; aspect-ratio: 1464 / 1076; min-width: 0; scroll-snap-align: start; }
+
+.project-hero-slider .full-image { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+.project-gallery-controls { display: flex; align-items: center; justify-content: flex-end; gap: 1.5rem; }
+
+.project-gallery-arrow { display: grid; place-items: center; width: 3rem; height: 3rem; padding: .25rem; border: 0; background: transparent; color: #a3a3a3; cursor: pointer; }
+
+.project-gallery-arrow svg { width: 2.5rem; height: 2.5rem; }
+
+.project-gallery-arrow:hover:not(:disabled) { color: #f5f5f5; }
+
+.project-gallery-arrow:disabled { opacity: .3; cursor: default; }
+
+.project-gallery-arrow:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+
+@media screen and (max-width: 767px) {
+  :root { --project-section-gap: 1.5rem; --project-tools-space: 2rem; }
+  .project-hero-gallery .project-hero-slider { flex: none; height: auto; }
+  .project-gallery-track { height: clamp(14rem, 65vw, 22rem); }
+  .project-info_component.project-build-summary { grid-template-columns: minmax(0, 1fr); row-gap: 1.5rem; }
 }
 
 .project-live-intro > p { margin-bottom: 0; }
