@@ -121,6 +121,8 @@ body {
 .nav_cta .button,
 .nav_cta-mobile .button,
 .cta .button {
+  min-height: 44px;
+  padding: 10px 15px;
   border: 1px solid var(--workroom-ink);
   border-radius: 999px;
   color: var(--workroom-ink);
