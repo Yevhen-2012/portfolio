@@ -3,6 +3,15 @@
   --_colors---background--primary: var(--case-dark);
 }
 
+.lumora-case .project-gallery-controls { justify-content: flex-start; }
+
+@media (min-width: 768px) {
+  .lumora-case .project-details_content {
+    justify-content: flex-start;
+    column-gap: clamp(32px, 5vw, 80px);
+  }
+}
+
 .case-bottom {
   --ink: #151412;
   --paper: #faf7f2;
