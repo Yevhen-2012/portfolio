@@ -1,6 +1,10 @@
+.lumora-case {
+  --case-dark: #161513;
+  --_colors---background--primary: var(--case-dark);
+}
+
 .case-bottom {
   --ink: #151412;
-  --dark: #161513;
   --paper: #faf7f2;
   --white: #fdfbf8;
   --muted: #c1b9af;
@@ -15,7 +19,7 @@
   --body-line: 1.5;
   --gutter: clamp(28px, 3.65vw, 64px);
   color: var(--white);
-  background: var(--dark);
+  background: var(--case-dark);
   font: 400 var(--body)/var(--body-line) var(--sans);
   letter-spacing: normal;
 }
