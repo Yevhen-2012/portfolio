@@ -1,0 +1,174 @@
+@font-face {
+  font-family: Anton;
+  src: url("../fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --workroom-paper: #faf7f2;
+  --workroom-paper-alt: #f4efe8;
+  --workroom-white: #fdfbf8;
+  --workroom-ink: #151412;
+  --workroom-muted: #59534d;
+  --workroom-line: #ddd5ca;
+  --workroom-dark: #161513;
+  --workroom-dark-muted: #c1b9af;
+  --workroom-dark-line: #47413a;
+  --project-heading: Anton, Impact, "Arial Narrow", sans-serif;
+  --project-h1: clamp(78px, 6.1vw, 88px);
+  --project-h2: 64px;
+  --project-h3: 24px;
+  --project-reading: 18px;
+  --project-reading-line: 1.5;
+  --project-nav-size: 14px;
+  --project-nav-line: 20px;
+  --project-button-size: 14px;
+  --project-button-line: 20px;
+  --project-caption-size: 12px;
+  --project-caption-line: 16px;
+}
+
+body {
+  --_colors---background--primary: var(--workroom-paper);
+  --_colors---text--primary: var(--workroom-ink);
+  --_colors---text--secondary: var(--workroom-muted);
+  --_colors---border--primary: var(--workroom-line);
+  --reading-size: var(--project-reading);
+  --reading-leading: var(--project-reading-line);
+  background: var(--workroom-paper);
+  color: var(--workroom-ink);
+}
+
+.nav_component {
+  color: var(--workroom-ink);
+  background: var(--workroom-paper);
+  border-bottom: 1px solid var(--workroom-line);
+}
+
+.section_projects-hero {
+  color: var(--workroom-ink);
+  background: var(--workroom-paper);
+}
+
+.section_projects-hero p {
+  color: var(--workroom-muted);
+}
+
+.heading-style-h1,
+.heading-style-h2 {
+  font-family: var(--project-heading);
+  font-weight: 400;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.heading-style-h1 {
+  font-size: var(--project-h1);
+  line-height: .92;
+  letter-spacing: -.028em;
+}
+
+.heading-style-h2 {
+  font-size: var(--project-h2);
+  line-height: .96;
+  letter-spacing: -.022em;
+}
+
+.section_projects-showcase,
+.footer {
+  --_colors---background--primary: var(--workroom-dark);
+  --_colors---text--primary: var(--workroom-white);
+  --_colors---text--secondary: var(--workroom-dark-muted);
+  --_colors---border--primary: var(--workroom-dark-line);
+  color: var(--workroom-white);
+  background: var(--workroom-dark);
+}
+
+.projects-showcase_component > h2 {
+  color: var(--workroom-dark-muted);
+  font-size: var(--project-caption-size);
+  line-height: var(--project-caption-line);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.project_showcase-info {
+  max-width: none;
+  padding-bottom: 17px;
+  border-bottom: 1px solid var(--workroom-dark-line);
+}
+
+.project_showcase-info h3 {
+  color: var(--workroom-white);
+  font-size: var(--project-h3);
+  line-height: 1.21;
+  font-weight: 500;
+}
+
+.project_showcase-info p { color: var(--workroom-dark-muted); }
+
+.cta .theme-color-light {
+  --_colors---background--primary: var(--workroom-paper-alt);
+  --_colors---text--primary: var(--workroom-ink);
+  --_colors---text--secondary: var(--workroom-muted);
+  --_colors---border--primary: var(--workroom-line);
+}
+
+.cta .rectangle_shape { background: var(--workroom-paper-alt); }
+.footer_logo path { fill: var(--workroom-white); }
+
+.nav_cta .button,
+.nav_cta-mobile .button,
+.cta .button {
+  border: 1px solid var(--workroom-ink);
+  border-radius: 999px;
+  color: var(--workroom-ink);
+  background: transparent;
+}
+
+.cta .button {
+  background: var(--workroom-ink);
+  color: var(--workroom-white);
+}
+
+.button > span {
+  font-size: var(--project-button-size);
+  line-height: var(--project-button-line);
+  font-weight: 500;
+}
+
+@media (min-width: 992px) {
+  .nav_menu_text {
+    font-size: var(--project-nav-size);
+    line-height: var(--project-nav-line);
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 1199px) {
+  :root {
+    --project-h1: clamp(64px, 6.45vw, 76px);
+    --project-h2: 52px;
+    --project-h3: 22px;
+    --project-reading: 17px;
+    --project-reading-line: 1.53;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --project-h1: clamp(50px, 8.1vw, 64px);
+    --project-h2: 42px;
+    --project-h3: 20px;
+    --project-reading: 16px;
+    --project-reading-line: 1.5;
+  }
+
+  .heading-style-h2 { line-height: .98; }
+  .project_showcase-info h3 { line-height: 1.25; }
+}
+
+@media (orientation: landscape) and (max-height: 540px) and (min-width: 641px) {
+  :root { --project-h1: 52px; }
+}
