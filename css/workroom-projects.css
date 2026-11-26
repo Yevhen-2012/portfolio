@@ -21,8 +21,6 @@
   --project-h3: 24px;
   --project-reading: 18px;
   --project-reading-line: 1.5;
-  --project-nav-size: 14px;
-  --project-nav-line: 20px;
   --project-button-size: 14px;
   --project-button-line: 20px;
   --project-caption-size: 12px;
@@ -38,12 +36,6 @@ body {
   --reading-leading: var(--project-reading-line);
   background: var(--workroom-paper);
   color: var(--workroom-ink);
-}
-
-.nav_component {
-  color: var(--workroom-ink);
-  background: var(--workroom-paper);
-  border-bottom: 1px solid var(--workroom-line);
 }
 
 .section_projects-hero {
@@ -118,8 +110,6 @@ body {
 .cta .rectangle_shape { background: var(--workroom-paper-alt); }
 .footer_logo path { fill: var(--workroom-white); }
 
-.nav_cta .button,
-.nav_cta-mobile .button,
 .cta .button {
   min-height: 44px;
   padding: 10px 15px;
@@ -138,14 +128,6 @@ body {
   font-size: var(--project-button-size);
   line-height: var(--project-button-line);
   font-weight: 500;
-}
-
-@media (min-width: 992px) {
-  .nav_menu_text {
-    font-size: var(--project-nav-size);
-    line-height: var(--project-nav-line);
-    font-weight: 500;
-  }
 }
 
 @media (max-width: 1199px) {

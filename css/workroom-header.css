@@ -1,0 +1,121 @@
+@font-face {
+  font-family: Anton;
+  src: url("../fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Display";
+  src: url("../fonts/InterDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Display";
+  src: url("../fonts/InterDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+
+.site-header {
+  --header-ink: #151412;
+  --header-paper: #faf7f2;
+  --header-white: #fdfbf8;
+  --header-rule: #ddd5ca;
+  --header-gutter: clamp(28px, 3.65vw, 64px);
+  --header-text: 14px/20px "Inter Display", Inter, Arial, sans-serif;
+  display: block;
+  color: var(--header-ink);
+  background: var(--header-paper);
+}
+
+.site-header .header-row {
+  box-sizing: border-box;
+  inline-size: min(calc(100% - var(--header-gutter) * 2), 1440px);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 22px;
+  min-block-size: 76px;
+  border-block-end: 1px solid var(--header-rule);
+}
+
+.site-header a {
+  color: inherit;
+  text-decoration: none;
+  letter-spacing: normal;
+}
+
+.site-header a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+
+.site-header .wordmark {
+  justify-self: start;
+  inline-size: fit-content;
+  font: 400 24px/1 Anton, Impact, "Arial Narrow", sans-serif;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+}
+
+.site-header .site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 44px);
+}
+
+.site-header .site-nav a,
+.site-header .header-contact {
+  font: 500 var(--header-text);
+}
+
+.site-header .site-nav a { text-underline-offset: .25em; }
+.site-header .site-nav a:hover { text-decoration: underline 1px; }
+
+.site-header .header-contact {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  justify-self: end;
+  padding: 9px 13px 9px 16px;
+  border: 1px solid var(--header-ink);
+  border-radius: 40px;
+  white-space: nowrap;
+  transition: background-color .18s, color .18s;
+}
+
+.site-header .header-contact:hover {
+  color: var(--header-white);
+  background: var(--header-ink);
+}
+
+.site-header .header-contact span { font-size: 16px; }
+
+@media (max-width: 767px) {
+  .site-header {
+    --header-gutter: clamp(18px, 5.4vw, 32px);
+    --header-text: 12px/18px "Inter Display", Inter, Arial, sans-serif;
+  }
+
+  .site-header .header-row { min-block-size: 61px; gap: 12px; }
+  .site-header .wordmark { font-size: 21px; }
+  .site-header .header-contact { padding: 5px 10px; gap: 6px; }
+  .site-header .site-nav { gap: clamp(12px, 3.2vw, 22px); }
+}
+
+@media (max-width: 640px) {
+  .site-header .header-row { grid-template-columns: 1fr auto; }
+  .site-header .header-contact { display: none; }
+}
+
+@media (orientation: landscape) and (max-height: 540px) and (min-width: 641px) {
+  .site-header .header-row { min-block-size: 58px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .header-contact { transition: none; }
+}
