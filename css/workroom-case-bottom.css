@@ -5,6 +5,14 @@
 
 .lumora-case .project-gallery-controls { justify-content: flex-start; }
 
+.lumora-case .project-galerry_component { padding-bottom: 32px; }
+.lumora-case .case-projects { padding-top: 32px; }
+
+@media (max-width: 767px) {
+  .lumora-case .project-galerry_component { padding-bottom: 24px; }
+  .lumora-case .case-projects { padding-top: 24px; }
+}
+
 @media (min-width: 768px) {
   .lumora-case .project-details_content {
     justify-content: flex-start;
