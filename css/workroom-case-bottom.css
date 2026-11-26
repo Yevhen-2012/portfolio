@@ -17,7 +17,6 @@
   --h3-line: 1.21;
   --body: 18px;
   --body-line: 1.5;
-  --gutter: clamp(28px, 3.65vw, 64px);
   color: var(--white);
   background: var(--case-dark);
   font: 400 var(--body)/var(--body-line) var(--sans);
@@ -25,7 +24,6 @@
 }
 
 .case-bottom .frame {
-  width: min(calc(100% - var(--gutter) * 2), 1440px);
   margin-inline: auto;
 }
 
@@ -159,7 +157,6 @@
     --h3: 20px;
     --h3-line: 1.25;
     --body: 16px;
-    --gutter: clamp(18px, 5.4vw, 32px);
   }
 
   .case-bottom .section-heading { flex-wrap: wrap; gap: 6px 18px; padding-block-end: 15px; }

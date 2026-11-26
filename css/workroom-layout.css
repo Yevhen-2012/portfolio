@@ -1,0 +1,18 @@
+:root {
+  --workroom-container-max: 1440px;
+  --workroom-gutter: clamp(28px, 3.65vw, 64px);
+}
+
+@media (max-width: 767px) {
+  :root { --workroom-gutter: clamp(18px, 5.4vw, 32px); }
+}
+
+.frame,
+.case-bottom .frame,
+.site-header .header-row {
+  inline-size: min(calc(100% - 2 * var(--workroom-gutter)), var(--workroom-container-max));
+  margin-inline: auto;
+}
+
+.padding-global { padding-inline: var(--workroom-gutter); }
+.container-large { max-width: var(--workroom-container-max); }
