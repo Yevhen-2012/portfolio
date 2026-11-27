@@ -186,3 +186,7 @@ body.site-typography {
 
 .site-typography :is(code, pre, blockquote, button) { font-family: var(--type-sans); }
 .site-typography :is(strong, b) { font-weight: 500; }
+
+.site-typography .project_showcase-info h3 {
+  font: 500 var(--type-h3)/var(--type-h3-line) var(--type-sans);
+}
