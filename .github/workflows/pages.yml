@@ -25,6 +25,7 @@ jobs:
           cp *.html robots.txt sitemap.xml .nojekyll _site/
           cp -R css js images fonts projects assets _site/
           cp styles.css app.js favicon.svg _site/
+          node scripts/build-projects.mjs _site/projects
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
