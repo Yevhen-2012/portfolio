@@ -1,20 +1,20 @@
-.lumora-case {
+.project-case {
   --case-dark: #161513;
   --_colors---background--primary: var(--case-dark);
 }
 
-.lumora-case .project-gallery-controls { justify-content: flex-start; }
+.project-case .project-gallery-controls { justify-content: flex-start; }
 
-.lumora-case .project-galerry_component { padding-bottom: 32px; }
-.lumora-case .case-projects { padding-top: 32px; }
+.project-case .project-galerry_component { padding-bottom: 32px; }
+.project-case .case-projects { padding-top: 32px; }
 
 @media (max-width: 767px) {
-  .lumora-case .project-galerry_component { padding-bottom: 24px; }
-  .lumora-case .case-projects { padding-top: 24px; }
+  .project-case .project-galerry_component { padding-bottom: 24px; }
+  .project-case .case-projects { padding-top: 24px; }
 }
 
 @media (min-width: 768px) {
-  .lumora-case .project-details_content {
+  .project-case .project-details_content {
     justify-content: flex-start;
     column-gap: clamp(32px, 5vw, 80px);
   }
