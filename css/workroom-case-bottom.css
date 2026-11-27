@@ -26,14 +26,14 @@
   --white: #fdfbf8;
   --muted: #c1b9af;
   --rule: #47413a;
-  --display: Anton, Impact, "Arial Narrow", sans-serif;
-  --sans: "Inter Display", Inter, Arial, sans-serif;
-  --h2: 64px;
-  --h2-line: .96;
-  --h3: 24px;
-  --h3-line: 1.21;
-  --body: 18px;
-  --body-line: 1.5;
+  --display: var(--type-display);
+  --sans: var(--type-sans);
+  --h2: var(--type-h2);
+  --h2-line: var(--type-h2-line);
+  --h3: var(--type-h3);
+  --h3-line: var(--type-h3-line);
+  --body: var(--type-body);
+  --body-line: var(--type-body-line);
   color: var(--white);
   background: var(--case-dark);
   font: 400 var(--body)/var(--body-line) var(--sans);
@@ -162,17 +162,9 @@
 .case-bottom .wordmark { font: 400 24px/1 var(--display); letter-spacing: .01em; text-transform: uppercase; }
 
 @media (max-width: 1199px) {
-  .case-bottom { --h2: 52px; --h3: 22px; --h3-line: 1.23; --body: 17px; --body-line: 1.53; }
 }
 
 @media (max-width: 767px) {
-  .case-bottom {
-    --h2: 42px;
-    --h2-line: .98;
-    --h3: 20px;
-    --h3-line: 1.25;
-    --body: 16px;
-  }
 
   .case-bottom .section-heading { flex-wrap: wrap; gap: 6px 18px; padding-block-end: 15px; }
   .case-bottom .project-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -184,7 +176,6 @@
 }
 
 @media (orientation: landscape) and (max-height: 540px) and (min-width: 641px) {
-  .case-bottom { --h2: 42px; --h2-line: .98; }
   .case-projects, .case-contact { padding-block: 34px; }
 }
 
