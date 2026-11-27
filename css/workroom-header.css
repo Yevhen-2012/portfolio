@@ -1,30 +1,9 @@
-@font-face {
-  font-family: Anton;
-  src: url("../fonts/Anton-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter Display";
-  src: url("../fonts/InterDisplay-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter Display";
-  src: url("../fonts/InterDisplay-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-display: swap;
-}
-
 .site-header {
   --header-ink: #151412;
   --header-paper: #faf7f2;
   --header-white: #fdfbf8;
   --header-rule: #ddd5ca;
-  --header-text: var(--type-nav, 14px)/var(--type-nav-line, 20px) "Inter Display", Inter, Arial, sans-serif;
+  --header-text: var(--type-nav, 14px)/var(--type-nav-line, 20px) "Inter Display", sans-serif;
   display: block;
   color: var(--header-ink);
   background: var(--header-paper);
@@ -55,7 +34,7 @@
 .site-header .wordmark {
   justify-self: start;
   inline-size: fit-content;
-  font: 400 var(--type-wordmark, 24px)/1 Anton, Impact, "Arial Narrow", sans-serif;
+  font: 400 var(--type-wordmark, 24px)/1 Anton, sans-serif;
   letter-spacing: .01em;
   text-transform: uppercase;
 }
@@ -95,7 +74,7 @@
 
 .contact-style-link {
   inline-size: fit-content;
-  font: 500 var(--type-button, 14px)/var(--type-button-line, 20px) "Inter Display", Inter, Arial, sans-serif;
+  font: 500 var(--type-button, 14px)/var(--type-button-line, 20px) "Inter Display", sans-serif;
   letter-spacing: normal;
   text-decoration: none;
   color: inherit;
@@ -111,7 +90,7 @@
 
 @media (max-width: 767px) {
   .site-header {
-    --header-text: var(--type-nav, 12px)/var(--type-nav-line, 18px) "Inter Display", Inter, Arial, sans-serif;
+    --header-text: var(--type-nav, 12px)/var(--type-nav-line, 18px) "Inter Display", sans-serif;
   }
 
   .site-header .header-row { min-block-size: 61px; gap: 12px; }

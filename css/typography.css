@@ -1,7 +1,28 @@
-/* Opt in on each page by loading this stylesheet before its component styles. */
+@font-face {
+  font-family: Anton;
+  src: url("../fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Display";
+  src: url("../fonts/InterDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Display";
+  src: url("../fonts/InterDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+
+/* Shared scale. The site-typography class adapts legacy Webflow pages. */
 :root {
-  --type-display: Anton, Impact, "Arial Narrow", sans-serif;
-  --type-sans: "Inter Display", Inter, Arial, sans-serif;
+  --type-display: Anton, sans-serif;
+  --type-sans: "Inter Display", sans-serif;
   --type-h1: clamp(78px, 6.1vw, 88px);
   --type-h1-line: .94;
   --type-h2: 64px;
@@ -92,3 +113,76 @@
     --type-stat-line: 42px;
   }
 }
+
+/* Legacy page roles consume the same scale as Home. */
+body.site-typography {
+  --_typography---font-family--paragraph: var(--type-sans);
+  --_typography---font-family--heading: var(--type-display);
+  --_typography---font-weight--normal: 400;
+  --_typography---font-weight--medium: 500;
+  --_typography---font-weight--semi-bold: 500;
+  --_typography---font-weight--bold: 500;
+  --_typography---font-weight--extra-bold: 500;
+  --_typography---font-weight--light: 400;
+  --reading-size: var(--type-body);
+  --reading-leading: var(--type-body-line);
+  font: 400 var(--type-body)/var(--type-body-line) var(--type-sans);
+  letter-spacing: normal;
+}
+
+.site-typography :is(h1, .heading-style-h1) {
+  font: 400 var(--type-h1)/var(--type-h1-line) var(--type-display);
+  letter-spacing: -.025em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.site-typography :is(h2, .heading-style-h2) {
+  font: 400 var(--type-h2)/var(--type-h2-line) var(--type-display);
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.site-typography :is(h3, h4, h5, h6, .heading-style-h3, .heading-style-h4, .heading-style-h5) {
+  font: 500 var(--type-h3)/var(--type-h3-line) var(--type-sans);
+  letter-spacing: normal;
+}
+
+.site-typography :is(p, .text-size-md, .text-size-lg, .text-size-xl) {
+  font-family: var(--type-sans);
+  font-size: var(--type-body);
+  line-height: var(--type-body-line);
+  letter-spacing: normal;
+}
+
+.site-typography :is(.text-size-sm, .project-live-note) {
+  font: 400 var(--type-description)/var(--type-description-line) var(--type-sans);
+  letter-spacing: normal;
+}
+
+.site-typography :is(.text-size-xs, .projects-showcase_component > h2, .case-bottom .card-info p) {
+  font: 400 var(--type-caption)/var(--type-caption-line) var(--type-sans);
+  letter-spacing: normal;
+}
+
+.site-typography :is(.button, .button > span, .project-live-link, .nav_menu_text, .text-link) {
+  font: 500 var(--type-button)/var(--type-button-line) var(--type-sans);
+  letter-spacing: normal;
+}
+
+.site-typography .wordmark {
+  font: 400 var(--type-wordmark)/1 var(--type-display);
+  letter-spacing: .01em;
+}
+
+.site-typography :is(input, textarea, select) {
+  font: 400 var(--type-field)/var(--type-field-line) var(--type-sans);
+}
+
+.site-typography label {
+  font: 500 var(--type-field-label)/var(--type-field-label-line) var(--type-sans);
+}
+
+.site-typography :is(code, pre, blockquote, button) { font-family: var(--type-sans); }
+.site-typography :is(strong, b) { font-weight: 500; }
