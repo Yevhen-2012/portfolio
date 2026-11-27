@@ -75,10 +75,11 @@
   gap: 10px;
   min-height: 32px;
   font: 500 14px/20px var(--sans);
-  text-underline-offset: .25em;
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s cubic-bezier(.645, .045, .355, 1);
 }
 
-.case-bottom .text-link:hover { text-decoration: underline 1px; }
+.case-bottom .text-link:is(:hover, :focus-visible) { border-bottom-color: currentColor; }
 .case-bottom .text-link span { font-size: 16px; }
 
 .case-bottom .project-grid {
@@ -191,7 +192,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .case-bottom .card img, .case-bottom .card-arrow, .case-contact .button { transition: none; }
+  .case-bottom .card img, .case-bottom .card-arrow, .case-contact .button, .case-bottom .text-link { transition: none; }
   .case-bottom .card:hover img { transform: none; }
   .case-contact .button .button_icon svg { transform: none !important; animation: none; }
 }

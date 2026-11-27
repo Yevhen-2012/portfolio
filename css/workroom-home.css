@@ -77,8 +77,7 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
   text-decoration: none;
 }
 
-.text-link { text-underline-offset: .25em; }
-.text-link:hover { text-decoration-thickness: 1px; text-decoration-line: underline; }
+.text-link:is(:hover, :focus-visible) { border-bottom-color: currentColor; }
 
 .hero { isolation: isolate; }
 
@@ -241,6 +240,8 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); font-weight: 500; }
   font: 500 var(--nav)/var(--nav-line) var(--sans);
   text-decoration: none;
   text-wrap: nowrap;
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s cubic-bezier(.645, .045, .355, 1);
 }
 
 .text-link span { font-size: 16px; }
