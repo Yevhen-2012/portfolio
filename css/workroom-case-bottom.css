@@ -6,6 +6,22 @@
 .project-case .project-gallery-controls { justify-content: flex-start; }
 
 .project-case .project-galerry_component { padding-bottom: 32px; }
+
+.project-case .project-galerry_component > img.full-image {
+  width: 80%;
+  height: auto;
+  align-self: center;
+}
+
+@media (min-width: 992px) {
+  .project-case .project-galerry_component > img.full-image {
+    width: auto;
+    max-width: 100%;
+    height: 70svh;
+    object-fit: contain;
+  }
+}
+
 .project-case .case-projects { padding-top: 32px; }
 
 @media (max-width: 767px) {

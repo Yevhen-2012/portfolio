@@ -1,4 +1,11 @@
 @font-face {
+  font-family: "Barlow Condensed";
+  src: url("../fonts/BarlowCondensed-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
   font-family: Anton;
   src: url("../fonts/Anton-Regular.ttf") format("truetype");
   font-weight: 400;
@@ -116,6 +123,8 @@
 
 /* Legacy page roles consume the same scale as Home. */
 body.site-typography {
+  --type-inner-heading: "Barlow Condensed", sans-serif;
+  --type-inner-heading-weight: 300;
   --_typography---font-family--paragraph: var(--type-sans);
   --_typography---font-family--heading: var(--type-display);
   --_typography---font-weight--normal: 400;
@@ -131,21 +140,25 @@ body.site-typography {
 }
 
 .site-typography :is(h1, .heading-style-h1) {
-  font: 400 var(--type-h1)/var(--type-h1-line) var(--type-display);
+  font: var(--type-inner-heading-weight) var(--type-h1)/var(--type-h1-line) var(--type-inner-heading);
   letter-spacing: -.025em;
   text-transform: uppercase;
   text-wrap: balance;
 }
 
+.site-typography :is(.section_projects-hero, .section_project-details) h1 {
+  font-size: min(var(--type-h1), 80px);
+}
+
 .site-typography :is(h2, .heading-style-h2) {
-  font: 400 var(--type-h2)/var(--type-h2-line) var(--type-display);
+  font: var(--type-inner-heading-weight) var(--type-h2)/var(--type-h2-line) var(--type-inner-heading);
   letter-spacing: -.02em;
   text-transform: uppercase;
   text-wrap: balance;
 }
 
 .site-typography :is(h3, h4, h5, h6, .heading-style-h3, .heading-style-h4, .heading-style-h5) {
-  font: 500 var(--type-h3)/var(--type-h3-line) var(--type-sans);
+  font: 400 var(--type-h3)/var(--type-h3-line) var(--type-sans);
   letter-spacing: normal;
 }
 
@@ -164,6 +177,11 @@ body.site-typography {
 .site-typography :is(.text-size-xs, .projects-showcase_component > h2, .case-bottom .card-info p) {
   font: 400 var(--type-caption)/var(--type-caption-line) var(--type-sans);
   letter-spacing: normal;
+}
+
+.site-typography .projects-showcase_component > h2 {
+  font-family: var(--type-inner-heading);
+  font-weight: var(--type-inner-heading-weight);
 }
 
 .site-typography :is(.button, .button > span, .project-live-link, .nav_menu_text, .text-link) {
@@ -188,5 +206,5 @@ body.site-typography {
 .site-typography :is(strong, b) { font-weight: 500; }
 
 .site-typography .project_showcase-info h3 {
-  font: 500 var(--type-h3)/var(--type-h3-line) var(--type-sans);
+  font: 400 var(--type-h3)/var(--type-h3-line) var(--type-sans);
 }
