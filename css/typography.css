@@ -140,8 +140,8 @@ body.site-typography {
 }
 
 .site-typography :is(h1, .heading-style-h1) {
-  font: var(--type-inner-heading-weight) var(--type-h1)/var(--type-h1-line) var(--type-inner-heading);
-  letter-spacing: -.025em;
+  font: 400 var(--type-h1)/var(--type-h1-line) var(--type-display);
+  letter-spacing: 0;
   text-transform: uppercase;
   text-wrap: balance;
 }
@@ -151,8 +151,8 @@ body.site-typography {
 }
 
 .site-typography :is(h2, .heading-style-h2) {
-  font: var(--type-inner-heading-weight) var(--type-h2)/var(--type-h2-line) var(--type-inner-heading);
-  letter-spacing: -.02em;
+  font: 400 var(--type-h2)/var(--type-h2-line) var(--type-display);
+  letter-spacing: 0;
   text-transform: uppercase;
   text-wrap: balance;
 }
