@@ -101,6 +101,8 @@
   color: inherit;
 }
 
+.contact-style-link .header-arrow-up { rotate: -90deg; }
+
 @keyframes header-arrow-slide {
   0% { transform: translateX(-100%); animation-timing-function: cubic-bezier(.333333, 0, .666667, .333333); }
   50% { transform: translateX(-50%); animation-timing-function: cubic-bezier(.333333, .666667, .666667, 1); }
