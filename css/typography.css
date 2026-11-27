@@ -1,0 +1,94 @@
+/* Opt in on each page by loading this stylesheet before its component styles. */
+:root {
+  --type-display: Anton, Impact, "Arial Narrow", sans-serif;
+  --type-sans: "Inter Display", Inter, Arial, sans-serif;
+  --type-h1: clamp(78px, 6.1vw, 88px);
+  --type-h1-line: .94;
+  --type-h2: 64px;
+  --type-h2-line: 64px;
+  --type-h3: 24px;
+  --type-h3-line: 30px;
+  --type-body: 18px;
+  --type-body-line: 27px;
+  --type-nav: 14px;
+  --type-nav-line: 20px;
+  --type-button: 14px;
+  --type-button-line: 20px;
+  --type-caption: 12px;
+  --type-caption-line: 16px;
+  --type-description: 14px;
+  --type-description-line: 20px;
+  --type-detail: 16px;
+  --type-detail-line: 24px;
+  --type-question: 18px;
+  --type-question-line: 26px;
+  --type-stat: clamp(64px, 5.2vw, 78px);
+  --type-stat-line: 1;
+  --type-stat-label: 15px;
+  --type-wordmark: 24px;
+  --type-field: 16px;
+  --type-field-line: 24px;
+  --type-field-label: 14px;
+  --type-field-label-line: 20px;
+}
+
+@media (max-width: 1199px) {
+  :root {
+    --type-h1: clamp(64px, 6.45vw, 76px);
+    --type-h1-line: .96;
+    --type-h2: 52px;
+    --type-h2-line: 54px;
+    --type-h3: 22px;
+    --type-h3-line: 28px;
+    --type-body: 17px;
+    --type-body-line: 26px;
+    --type-question: 17px;
+    --type-question-line: 25px;
+    --type-stat: clamp(45px, 5vw, 60px);
+    --type-stat-label: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --type-h1: clamp(52px, 7.8vw, 60px);
+    --type-h1-line: .98;
+    --type-h2: 42px;
+    --type-h2-line: 44px;
+    --type-h3: 20px;
+    --type-h3-line: 26px;
+    --type-body: 16px;
+    --type-body-line: 24px;
+    --type-question: 16px;
+    --type-question-line: 24px;
+    --type-stat: 40px;
+    --type-stat-line: 42px;
+    --type-wordmark: 21px;
+  }
+}
+
+@media (max-width: 479px) {
+  :root {
+    --type-h1: clamp(40px, 10vw, 48px);
+    --type-h1-line: 1;
+    --type-h2: 36px;
+    --type-h2-line: 38px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 540px) {
+  :root {
+    --type-h1: clamp(48px, 6.2vw, 52px);
+    --type-h1-line: 1;
+    --type-h2: clamp(36px, 5vw, 42px);
+    --type-h2-line: 1.05;
+    --type-h3: 20px;
+    --type-h3-line: 26px;
+    --type-body: 16px;
+    --type-body-line: 24px;
+    --type-question: 16px;
+    --type-question-line: 24px;
+    --type-stat: 40px;
+    --type-stat-line: 42px;
+  }
+}

@@ -8,22 +8,22 @@
   --dark: #161513;
   --dark-rule: #47413a;
   --dark-muted: #c1b9af;
-  --display: Anton, Impact, "Arial Narrow", sans-serif;
-  --sans: "Inter Display", Inter, Arial, sans-serif;
-  --h1: clamp(78px, 6.1vw, 88px);
-  --h1-line: .92;
-  --h2: 64px;
-  --h2-line: .96;
-  --h3: 24px;
-  --h3-line: 1.21;
-  --body: 18px;
-  --body-line: 1.5;
-  --nav: 14px;
-  --nav-line: 20px;
-  --button: 14px;
-  --button-line: 20px;
-  --caption: 12px;
-  --caption-line: 16px;
+  --display: var(--type-display);
+  --sans: var(--type-sans);
+  --h1: var(--type-h1);
+  --h1-line: var(--type-h1-line);
+  --h2: var(--type-h2);
+  --h2-line: var(--type-h2-line);
+  --h3: var(--type-h3);
+  --h3-line: var(--type-h3-line);
+  --body: var(--type-body);
+  --body-line: var(--type-body-line);
+  --nav: var(--type-nav);
+  --nav-line: var(--type-nav-line);
+  --button: var(--type-button);
+  --button-line: var(--type-button-line);
+  --caption: var(--type-caption);
+  --caption-line: var(--type-caption-line);
   --section-space: clamp(72px, 7.3vw, 116px);
 }
 
@@ -71,7 +71,7 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .wordmark {
   justify-self: start;
   inline-size: fit-content;
-  font: 400 24px/1 var(--display);
+  font: 400 var(--type-wordmark)/1 var(--display);
   letter-spacing: .01em;
   text-transform: uppercase;
   text-decoration: none;
@@ -101,10 +101,11 @@ h1, h2 {
   text-transform: uppercase;
 }
 
-h1 { font-size: var(--h1); line-height: var(--h1-line); letter-spacing: -.028em; }
+h1 { font-size: var(--h1); line-height: var(--h1-line); letter-spacing: -.025em; }
 h1 span { display: block; inline-size: max-content; }
+h2 { text-wrap: balance; }
 
-h2 { font-size: var(--h2); line-height: var(--h2-line); letter-spacing: -.022em; }
+h2 { font-size: var(--h2); line-height: var(--h2-line); letter-spacing: -.02em; }
 h3 { font-size: var(--h3); line-height: var(--h3-line); font-weight: 500; }
 
 .hero-copy p {
@@ -183,8 +184,8 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); font-weight: 500; }
   border-block-end: 1px solid var(--rule);
 }
 
-.hero-stats dd { font: 400 clamp(52px, 5.2vw, 78px)/.98 var(--display); letter-spacing: -.03em; }
-.hero-stats dt { font-size: 15px; line-height: 1.3; color: var(--ink-muted); }
+.hero-stats dd { font: 400 var(--type-stat)/var(--type-stat-line) var(--display); letter-spacing: -.03em; }
+.hero-stats dt { font-size: var(--type-stat-label); line-height: 20px; color: var(--ink-muted); }
 
 .toolkit-row {
   display: grid;
@@ -199,7 +200,7 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); font-weight: 500; }
   color: var(--ink-muted);
   font-size: var(--caption);
   line-height: var(--caption-line);
-  letter-spacing: .09em;
+  letter-spacing: .08em;
   text-transform: uppercase;
 }
 
@@ -271,8 +272,8 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); font-weight: 500; }
 .project-meta p {
   margin-block-start: 4px;
   color: var(--dark-muted);
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: var(--type-description);
+  line-height: var(--type-description-line);
 }
 
 .project-arrow {
@@ -306,8 +307,8 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); font-weight: 500; }
   max-inline-size: 48ch;
   margin-block-start: 7px;
   color: var(--ink-muted);
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: var(--type-detail);
+  line-height: var(--type-detail-line);
 }
 
 .faq-list summary {
@@ -317,7 +318,7 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); font-weight: 500; }
   gap: 15px;
   min-block-size: 62px;
   padding-block: 13px;
-  font-weight: 500;
+  font: 500 var(--type-question)/var(--type-question-line) var(--sans);
   cursor: pointer;
   list-style: none;
 }
@@ -340,7 +341,6 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); font-weight: 500; }
 }
 
 @media (max-width: 1199px) {
-  :root { --h1: clamp(64px, 6.45vw, 76px); --h2: 52px; --h3: 22px; --h3-line: 1.23; --body: 17px; --body-line: 1.53; }
   .hero-grid { min-block-size: 510px; }
 }
 
@@ -349,31 +349,16 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); font-weight: 500; }
   .hero-copy { padding-block: 45px 36px; }
   .hero-stats { grid-column: 1 / -1; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; inline-size: 100%; margin: 0 0 26px; text-align: start; }
   .hero-stats div { flex-flow: row-reverse; align-items: baseline; justify-content: start; gap: 12px; padding-block: 10px; border-block-end: 0; border-block-start: 1px solid var(--rule); }
-  .hero-stats dd { font-size: 45px; }
   .toolkit-row { min-block-size: 74px; }
 }
 
 @media (max-width: 767px) {
-  :root {
-    --h1: clamp(50px, 8.1vw, 64px);
-    --h2: 42px;
-    --h2-line: .98;
-    --h3: 20px;
-    --h3-line: 1.25;
-    --body: 16px;
-    --body-line: 1.5;
-    --nav: 12px;
-    --nav-line: 18px;
-    --section-space: 56px;
-  }
+  :root { --section-space: 56px; }
 
-  .wordmark { font-size: 21px; }
   .hero-grid { gap: 0 16px; }
   .hero-copy { padding-block: 37px 31px; }
   .hero-copy p { margin-block: 20px 19px; }
   .hero-stats { gap: 16px; margin-block-end: 18px; }
-  .hero-stats dt { font-size: 13px; }
-  .hero-stats dd { font-size: 40px; }
   .toolkit-row { grid-template-columns: 1fr; gap: 13px; padding-block: 15px 20px; }
   .toolkit { justify-items: start; column-gap: 13px; }
   .toolkit img { block-size: auto; max-block-size: 22px; }
@@ -394,7 +379,7 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); font-weight: 500; }
 }
 
 @media (orientation: landscape) and (max-height: 540px) and (min-width: 641px) {
-  :root { --h1: 52px; --h1-line: .92; --section-space: 56px; }
+  :root { --section-space: 56px; }
   .hero-grid { min-block-size: auto; }
   .hero-copy { padding-block: 28px; }
   .hero-copy p { margin-block: 14px 16px; }
@@ -406,7 +391,6 @@ h3 { font-size: var(--h3); line-height: var(--h3-line); font-weight: 500; }
   .hero-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, .54fr); }
   .hero-stats { grid-column: auto; grid-template-columns: 1fr; align-self: center; gap: 12px; margin: 0; text-align: end; }
   .hero-stats div { flex-direction: column-reverse; align-items: end; gap: 3px; padding-block: 0 10px; border-block-start: 0; border-block-end: 1px solid var(--rule); }
-  .hero-stats dd { font-size: 42px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

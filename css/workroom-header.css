@@ -24,7 +24,7 @@
   --header-paper: #faf7f2;
   --header-white: #fdfbf8;
   --header-rule: #ddd5ca;
-  --header-text: 14px/20px "Inter Display", Inter, Arial, sans-serif;
+  --header-text: var(--type-nav, 14px)/var(--type-nav-line, 20px) "Inter Display", Inter, Arial, sans-serif;
   display: block;
   color: var(--header-ink);
   background: var(--header-paper);
@@ -55,7 +55,7 @@
 .site-header .wordmark {
   justify-self: start;
   inline-size: fit-content;
-  font: 400 24px/1 Anton, Impact, "Arial Narrow", sans-serif;
+  font: 400 var(--type-wordmark, 24px)/1 Anton, Impact, "Arial Narrow", sans-serif;
   letter-spacing: .01em;
   text-transform: uppercase;
 }
@@ -95,7 +95,7 @@
 
 .contact-style-link {
   inline-size: fit-content;
-  font: 500 14px/20px "Inter Display", Inter, Arial, sans-serif;
+  font: 500 var(--type-button, 14px)/var(--type-button-line, 20px) "Inter Display", Inter, Arial, sans-serif;
   letter-spacing: normal;
   text-decoration: none;
   color: inherit;
@@ -111,13 +111,13 @@
 
 @media (max-width: 767px) {
   .site-header {
-    --header-text: 12px/18px "Inter Display", Inter, Arial, sans-serif;
+    --header-text: var(--type-nav, 12px)/var(--type-nav-line, 18px) "Inter Display", Inter, Arial, sans-serif;
   }
 
   .site-header .header-row { min-block-size: 61px; gap: 12px; }
-  .site-header .wordmark { font-size: 21px; }
+  .site-header .wordmark { font-size: var(--type-wordmark, 21px); }
   :is(.site-header .header-contact, .contact-style-link) { gap: 6px; }
-  .contact-style-link { font-size: 12px; line-height: 18px; }
+  .contact-style-link { font-size: var(--type-button, 12px); line-height: var(--type-button-line, 18px); }
   .site-header .site-nav { gap: clamp(12px, 3.2vw, 22px); }
 }
 
