@@ -74,7 +74,7 @@
 .site-header .site-nav a { text-underline-offset: .25em; }
 .site-header .site-nav a:hover { text-decoration: underline 1px; }
 
-.site-header .header-contact {
+:is(.site-header .header-contact, .contact-style-link) {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -85,13 +85,21 @@
   transition: border-color .3s cubic-bezier(.645, .045, .355, 1);
 }
 
-.site-header .header-contact:is(:hover, :focus-visible) {
+:is(.site-header .header-contact, .contact-style-link):is(:hover, :focus-visible) {
   border-bottom-color: currentColor;
 }
 
-.site-header .header-arrow { display: flex; width: 14px; height: 14px; overflow: hidden; }
-.site-header .header-arrow svg { flex: 0 0 14px; width: 14px; height: 14px; transform: translateX(-100%); }
-.site-header .header-contact:is(:hover, :focus-visible) svg { animation: header-arrow-slide .3s; }
+:is(.site-header, .contact-style-link) .header-arrow { display: flex; width: 14px; height: 14px; overflow: hidden; }
+:is(.site-header, .contact-style-link) .header-arrow svg { flex: 0 0 14px; width: 14px; height: 14px; transform: translateX(-100%); }
+:is(.site-header .header-contact, .contact-style-link):is(:hover, :focus-visible) svg { animation: header-arrow-slide .3s; }
+
+.contact-style-link {
+  inline-size: fit-content;
+  font: 500 14px/20px "Inter Display", Inter, Arial, sans-serif;
+  letter-spacing: normal;
+  text-decoration: none;
+  color: inherit;
+}
 
 @keyframes header-arrow-slide {
   0% { transform: translateX(-100%); animation-timing-function: cubic-bezier(.333333, 0, .666667, .333333); }
@@ -106,7 +114,8 @@
 
   .site-header .header-row { min-block-size: 61px; gap: 12px; }
   .site-header .wordmark { font-size: 21px; }
-  .site-header .header-contact { gap: 6px; }
+  :is(.site-header .header-contact, .contact-style-link) { gap: 6px; }
+  .contact-style-link { font-size: 12px; line-height: 18px; }
   .site-header .site-nav { gap: clamp(12px, 3.2vw, 22px); }
 }
 
@@ -120,6 +129,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .site-header .header-contact { transition: none; }
-  .site-header .header-contact svg { animation: none; }
+  :is(.site-header .header-contact, .contact-style-link) { transition: none; }
+  :is(.site-header .header-contact, .contact-style-link) svg { animation: none; }
 }
