@@ -52,6 +52,14 @@
 .project-live-links { display: flex; flex-wrap: wrap; gap: .75rem; }
 
 @media screen and (min-width: 768px) {
+  .project-details_content:has(> .project-hero-gallery) {
+    padding-bottom: var(--project-tools-space);
+  }
+
+  .project-details_content:has(> .project-hero-gallery) > .project-details_description {
+    padding-bottom: 0;
+  }
+
   /* Let the copy define the row height; the preview fills that height. */
   .project-details_content > .project-details_visual {
     position: relative;
