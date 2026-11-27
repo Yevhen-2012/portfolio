@@ -1,0 +1,49 @@
+.text-link {
+  position: relative;
+}
+
+.text-link::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: calc(50% - 11px);
+  height: 1px;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity .3s cubic-bezier(.645, .045, .355, 1);
+}
+
+.text-link .text-link-arrow {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 16px;
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+}
+
+.text-link-arrow > span,
+.text-link-arrow::after {
+  display: block;
+  width: 100%;
+  transition: transform .3s cubic-bezier(.645, .045, .355, 1);
+}
+
+.text-link-arrow::after {
+  content: attr(data-arrow);
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+}
+
+.text-link:is(:hover, :focus-visible)::after { opacity: 1; }
+.text-link:is(:hover, :focus-visible) .text-link-arrow > span { transform: translateX(100%); }
+.text-link:is(:hover, :focus-visible) .text-link-arrow::after { transform: translateX(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .text-link::after,
+  .text-link-arrow > span,
+  .text-link-arrow::after { transition: none; }
+  .text-link:is(:hover, :focus-visible) .text-link-arrow > span { transform: none; }
+  .text-link-arrow::after { display: none; }
+}
